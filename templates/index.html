@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MusicPlayer Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSSFiles/custom.css' %}">
+  </head>
+<body>
+  {% load static %}
+  <main>
+    <nav class="mainav shadow navbar navbar-expand-lg navbar bg-dark border-bottom border-body fixed-top" data-bs-theme="dark" >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="bi bi-soundwave"></i>VibeVault
+        <div style="font-size: small;">Tune Into Your Vibes</div>
+        </a>
+        <div>
+          <div class="input-group ">
+            <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text border-0" id="basic-addon2"><i class="bi bi-search-heart"></i></span>
+          </div>
+
+          <div class="text-white h5 mx-5">
+            <a href="">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Discover</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">New</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Trending</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Genre
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Rap</a></li>
+                <li><a class="dropdown-item" href="#">Bollywood</a></li>
+            
+                <li><a class="dropdown-item" href="#">Pop</a></li>
+              </ul>
+            </li>
+            <img class="rounded-circle" src="{% static 'jw.jpeg'%}"style="width:40px;height:40px">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hi, Tanay
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person">  Profile</i></a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i>  Settings</a></li>
+               
+                <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i>  Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
++
+
+    <div class="hero-area text-white pt-5 mt-2">
+      <ul class="hero-nav nav m-4 nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="text-white nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Featured</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="text-white nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Trending</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="text-white nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">New Release</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">1
+
+
+          <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+              <div class="col-1 h3">01</div>
+              <div class="col d-flex">
+                <img class="rounded m-1" src="{% static 'jw.jpeg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+                <div class="ms-1">
+                  <div>Lucid Dreams</div>  
+                </div>
+              </div>
+              <div class="col-2">9:99 <i class="bi bi-play"> </i></div>
+          </div>
+
+          <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+            <div class="col-1 h3">02</div>
+            <div class="col d-flex">
+              <img class="rounded m-1" src="{% static 'kr.jpeg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+              <div class="ms-1">
+                <div>Khatta Flow</div>  
+              </div>
+            </div>
+            <div class="col-2">3:00 <i class="bi bi-play"> </i></div>
+        </div>
+
+        <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+          <div class="col-1 h3">03</div>
+          <div class="col d-flex">
+            <img class="rounded m-1" src="{% static 'ts.jpg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+            <div class="ms-1">
+              <div>Butterfly Effect</div>  
+            </div>
+          </div>
+          <div class="col-2">4:00 <i class="bi bi-play"> </i></div>
+      </div>
+
+      
+
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">2
+          <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+            <div class="col-1 h3">01</div>
+            <div class="col d-flex">
+              <img class="rounded m-1" src="{% static 'kr.jpeg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+              <div class="ms-1">
+                <div>Joota Japaani</div>  
+              </div>
+            </div>
+            <div class="col-2">3:00 <i class="bi bi-play"> </i></div>
+        </div>
+
+        <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+          <div class="col-1 h3">02</div>
+          <div class="col d-flex">
+            <img class="rounded m-1" src="{% static 'dk.jpeg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+            <div class="ms-1">
+              <div>Meltdown</div>  
+            </div>
+          </div>
+          <div class="col-2">3:00 <i class="bi bi-play"> </i></div>
+      </div>
+
+      <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+        <div class="col-1 h3">03</div>
+        <div class="col d-flex">
+          <img class="rounded m-1" src="{% static 'jc.jpeg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+          <div class="ms-1">
+            <div>Middle Child</div>  
+          </div>
+        </div>
+        <div class="col-2">4:15 <i class="bi bi-play"> </i></div>
+    </div>
+
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">3
+          <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+            <div class="col-1 h3">01</div>
+            <div class="col d-flex">
+              <img class="rounded m-1" src="{% static 'dk.jpeg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+              <div class="ms-1">
+                <div>First Person Shooter</div>  
+              </div>
+            </div>
+            <div class="col-2">3:40 <i class="bi bi-play"> </i></div>
+        </div>
+
+        <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+          <div class="col-1 h3">02</div>
+          <div class="col d-flex">
+            <img class="rounded m-1" src="{% static 'jw.jpeg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+            <div class="ms-1">
+              <div>Doomsday</div>  
+            </div>
+          </div>
+          <div class="col-2">2:50 <i class="bi bi-play"> </i></div>
+      </div>
+
+      <div class=" song-small m-2 ms-4 col-md-6 row bg-secondary align-items-center">
+        <div class="col-1 h3">03</div>
+        <div class="col d-flex">
+          <img class="rounded m-1" src="{% static 'ts.jpg' %}" style="width: 70px; height: 70px; object-fit: cover;" >
+          <div class="ms-1">
+            <div>Fein</div>  
+          </div>
+        </div>
+        <div class="col-2">4:00 <i class="bi bi-play"> </i></div>
+    </div>
+
+    
+
+        </div>
+    </div>
+
+    
+    
+  </main>
+  <h5 class="song-category-title mx-5 ">Rap Music</h5>
+  <section class="p-4 mx-5 d-flex ">
+    
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'jw.jpeg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static 'Bandit.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">Juice Wrld - Bandit</div>
+      </div>
+    </div>
+
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'ts.jpg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static 'sicko mode.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">Travis Scott - Sicko Mode</div>
+      </div>
+    </div>
+
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'jc.jpeg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static '100 mil.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">J Cole - 100 mil</div>
+      </div>
+    </div>
+  </section>
+
+  <h5 class="song-category-title mx-5 ">Bollywood Music</h5>
+  <section class="p-4 mx-5 d-flex ">
+    
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'as.jpeg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static 'bekhayali.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">Arijit Singh - Bekhayali</div>
+      </div>
+    </div>
+
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'ataa.jpg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px; object-fit: cover">
+        <a href="{% static 'Jeena Jeena.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">Atif Aslam - Jeena Jeena</div>
+      </div>
+    </div>
+
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'kk.jpeg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static 'dil_ibadat.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">KK - Dil Ibadat</div>
+      </div>
+    </div>
+  </section>
+
+  <h5 class="song-category-title mx-5 ">Pop Music</h5>
+  <section class="p-4 mx-5 d-flex ">
+    
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'wk.jpg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static 'heartless.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">The Weeknd - Heartless </div>
+      </div>
+    </div>
+
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'pm.jpeg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static 'Sunflower.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">Post Malone - Sunflower</div>
+      </div>
+    </div>
+
+    <div class="ms-4" style="width: 200px;">
+      <div style="position: relative;">
+        <img src="{% static 'jb.jpg' %}" class="rounded-img-fluid" style="width: 200px;height: 200px;object-fit: cover">
+        <a href="{% static 'coldwater.mp3' %}">
+          <div style="position: absolute;background-color: #000000bb;left: 0px;top: 0px;width: 200px;height: 200px; :hover : opacity: 1; opacity: 0.5;">
+            <i class="h1 bi bi-play" style="left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);"></i>
+          </div>
+        </a> 
+    </div>
+      <div>
+        <div class="lead text-white">Justin Beiber - Cold Water</div>
+      </div>
+    </div>
+  </section>
+<footer class="p-5 row bg-dark text-white">
+    <div class="col-3">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Latest</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Signup</a></li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <h5>Subscribe To Our Newsletter</h5>
+      <div>to recieve news content</div>
+      <div class="input-group mb-3 mt-2">
+        <input type="text" class="form-control" placeholder="Email" >
+        <span class="bg-primary text-white input-group-text" id="basic-addon2">Subscribe</span>
+      </div>
+      <div class="text-white h5">
+        Follow us:
+        <a href="">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="">
+          <i class="bi bi-twitter"></i>
+        </a>
+      </div>      
+    </div>
+
+</footer>
+
+</body>
+</html>
+
+
